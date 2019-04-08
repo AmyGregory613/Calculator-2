@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amy's Awesome Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="calculator-container">
+        <h1>Amy's Awesome Calculator</h1>
+        <form name="calculator">
+            <center>
+                <input type="text" id="answer" />
+            </center>
+            <br>
+            <center>
+                <input type="button" value="1" class="btn-num" />
+                <input type="button" value="2" class="btn-num" />
+                <input type="button" value="3" class="btn-num" />
+                <br>
+                <input type="button" value="4" class="btn-num" />
+                <input type="button" value="5" class="btn-num" />
+                <input type="button" value="6" class="btn-num" />
+                <br>
+                <input type="button" value="7" class="btn-num" />
+                <input type="button" value="8" class="btn-num" />
+                <input type="button" value="9" class="btn-num" />
+                <br>
+                <input type="button" value="0" class="btn-num" />
+                <input type="button" value="." class="btn-num" />
+                <input type="button" value="+" class="btn" />
+                <br>
+                <input type="button" value="-" class="btn" />
+                <input type="button" value="*" class="btn" />
+                <input type="button" value="/" class="btn" />
+                <br>
+                <input style="width: 152px" type="button" value="=" id="equal" onclick="calculator.answer.value = eval(calculator.answer.value)" />
+                <!-- <input type="button" value="C" class="btn" onclick="calculator.answer.value = ''" /> -->
+            </center>
+        </form>
+    </div>
+    <script src="calculator.js"></script>
+    <script>
+    "use strict";
+
+    var x = document.querySelectorAll("btn-num").getAttribute("value");
+
+    var numberButtons = document.querySelectorAll("btn-num").addEventListener('click', printValue());
+    console.log(numberButtons);
+
+    function printValue() {
+        document.getElementById("answer").innerHTML = x;
+    }
+    printValue();
+
+
+    var btns = document.querySelectorAll(".btn");
+    console.log(btns);
+
+    for (i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", calculate);
+    }
+    </script>
+</body>
+
+</html>
