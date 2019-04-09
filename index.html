@@ -41,26 +41,28 @@
         </form>
     </div>
     <script src="calculator.js"></script>
-    <script>
+    <script type="text/javascript">
     "use strict";
+    var x = document.querySelectorAll("btn-num").value;
+    var numberButtons = document.querySelectorAll("btn-num");
 
-    var x = document.querySelectorAll("btn-num").getAttribute("value");
+    let btnNumInputs = document.getElementsByClassName("btn-num");
+    console.log(btnNumInputs); //logs an array of elements
 
-    var numberButtons = document.querySelectorAll("btn-num").addEventListener('click', printValue());
-    console.log(numberButtons);
+    for(let i = 0; i < btnNumInputs.length; i++) {
+        console.log(btnNumInputs[i]) // loop through each element
 
-    function printValue() {
+        btnNumInputs[i].addEventListener('click', printValue());
+    }
+
+    function printValue(x) {
         document.getElementById("answer").innerHTML = x;
     }
     printValue();
 
-
     var btns = document.querySelectorAll(".btn");
     console.log(btns);
-
-    for (i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", calculate);
-    }
+    for (let i = 0; i < btns.length; i++) { btns[i].addEventListener("click", calculate); }
     </script>
 </body>
 
