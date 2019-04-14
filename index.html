@@ -9,61 +9,35 @@
 <body>
     <div id="calculator-container">
         <h1>Amy's Awesome Calculator</h1>
-        <form name="calculator">
-            <center>
-                <input type="text" id="answer" />
-            </center>
+        <center>
+            <input type="text" id="answer" placeholder="Click buttons to enter data" />
+        </center>
+        <br>
+        <center>
+            <button type="button" class="btn-num" onclick="calculator(this, '1')">1</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '2')">2</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '3')">3</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '4')">4</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '5')">5</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '6')">6</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '7')">7</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '8')">8</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '9')">9</button>
+            <button type="button" class="btn-num" onclick="calculator(this, '0')">0</button>
+
+            <button type="button" class="btn" onclick="calculator(this, '.')">.</button>
+            <button type="button" id="operator"class="btn" onclick="calculator(this, '+')">+</button>
+            <button type="button" id="operator"class="btn" onclick="calculator(this, '-')">-</button>
+            <button type="button" id="operator"class="btn" onclick="calculator(this, '*')">*</button>
+            <button type="button" id="operator"class="btn" onclick="calculator(this, '/')">/</button>
+
             <br>
-            <center>
-                <input type="button" value="1" class="btn-num" />
-                <input type="button" value="2" class="btn-num" />
-                <input type="button" value="3" class="btn-num" />
-                <br>
-                <input type="button" value="4" class="btn-num" />
-                <input type="button" value="5" class="btn-num" />
-                <input type="button" value="6" class="btn-num" />
-                <br>
-                <input type="button" value="7" class="btn-num" />
-                <input type="button" value="8" class="btn-num" />
-                <input type="button" value="9" class="btn-num" />
-                <br>
-                <input type="button" value="0" class="btn-num" />
-                <input type="button" value="." class="btn-num" />
-                <input type="button" value="+" class="btn" />
-                <br>
-                <input type="button" value="-" class="btn" />
-                <input type="button" value="*" class="btn" />
-                <input type="button" value="/" class="btn" />
-                <br>
-                <input style="width: 152px" type="button" value="=" id="equal" onclick="calculator.answer.value = eval(calculator.answer.value)" />
-                <!-- <input type="button" value="C" class="btn" onclick="calculator.answer.value = ''" /> -->
-            </center>
-        </form>
+            <button style="width: 152px" type="button" id="operator" value="=" onclick="calculator(this, '=')">=</button>
+            <button type="button" id="operator" value="C" class="btn" onclick="clearScreen()">C</button>
+        </center>
     </div>
     <script src="calculator.js"></script>
-    <script type="text/javascript">
-    "use strict";
-    var x = document.querySelectorAll("btn-num").value;
-    var numberButtons = document.querySelectorAll("btn-num");
-
-    let btnNumInputs = document.getElementsByClassName("btn-num");
-    console.log(btnNumInputs); //logs an array of elements
-
-    for(let i = 0; i < btnNumInputs.length; i++) {
-        console.log(btnNumInputs[i]) // loop through each element
-
-        btnNumInputs[i].addEventListener('click', printValue());
-    }
-
-    function printValue(x) {
-        document.getElementById("answer").innerHTML = x;
-    }
-    printValue();
-
-    var btns = document.querySelectorAll(".btn");
-    console.log(btns);
-    for (let i = 0; i < btns.length; i++) { btns[i].addEventListener("click", calculate); }
-    </script>
+    
 </body>
 
 </html>
